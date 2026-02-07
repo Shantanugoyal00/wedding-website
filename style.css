@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Playfair Display", serif;
+  color: #444;
+  background: #FCFDF6;
+}
+
+/* WELCOME OVERLAY */
+#welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: #FCFDF6;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-box {
+  text-align: center;
+  cursor: pointer;
+}
+
+.welcome-box h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 54px;
+}
+
+/* FLOATING MENU */
+#menu-btn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 50;
+  background: #FCFDF6;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* SIDE NAV */
+#nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: none;
+  z-index: 60;
+}
+
+#side-nav {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background: #FCFDF6;
+  padding: 30px 20px;
+  z-index: 70;
+  transition: left 0.3s ease;
+}
+
+#side-nav.open { left: 0; }
+
+#close-nav {
+  background: none;
+  border: none;
+  font-size: 22px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.nav-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+#side-nav a {
+  display: block;
+  margin-bottom: 18px;
+  color: #a87c3a;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #FCFDF6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SLIDESHOW */
+.slideshow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+  max-width: 70%;
+  max-height: 70%;
+  padding: 40px;
+  background: #FCFDF6;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.slide.active { opacity: 1; }
+
+/* VENUE IMAGE */
+#venue-image {
+  display: none;
+  max-width: 70%;
+  max-height: 70%;
+  padding: 40px;
+  background: #FCFDF6;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+/* CONTENT */
+.content {
+  width: 50%;
+  margin-left: 50%;
+  background: #FCFDF6;
+}
+
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* TITLES */
+.section-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* INFO BOX */
+.info-box {
+  max-width: 520px;
+}
+
+/* TEXT */
+.names {
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+}
+
+.date-big {
+  font-size: 28px;
+  color: #a87c3a;
+}
+
+.countdown-text {
+  color: #7b8f6a;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+
+  .left-panel {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .content {
+    width: 100%;
+    margin-left: 0;
+  }
+}

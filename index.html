@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wedding Invitation</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- WELCOME OVERLAY -->
+<div id="welcome-overlay">
+  <div class="welcome-box">
+    <h1>Welcome</h1>
+    <p>Tap to enter</p>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FLOATING MENU BUTTON -->
+<button id="menu-btn" disabled>☰</button>
+
+<!-- NAV OVERLAY -->
+<div id="nav-overlay"></div>
+
+<!-- SIDE NAV -->
+<nav id="side-nav">
+  <button id="close-nav">✕</button>
+  <h2 class="nav-title">Deepali & Mriul</h2>
+  <a href="#welcome">Home</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#venue">Venue</a>
+</nav>
+
+<div class="container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <div class="slideshow" id="slideshow">
+      <img src="images/slide1.jpg" class="slide active">
+      <img src="images/slide2.jpg" class="slide">
+      <img src="images/slide3.jpg" class="slide">
+    </div>
+    <img src="images/venue.jpg" id="venue-image" />
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="content">
+
+    <!-- WELCOME -->
+    <section id="welcome" class="section">
+      <div class="info-box">
+        <h1 class="names">Deepali<br>&<br>Mridul</h1>
+        <p class="day">Sunday</p>
+        <p class="date-big">March 8, 2026</p>
+        <p class="save">Save the Date</p>
+        <p id="timer" class="countdown-text"></p>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="section">
+      <h1 class="section-title">Schedule</h1>
+      <div class="info-box">
+        <h2>Let’s Plan Your Day 📃</h2>
+        <p class="date">Tuesday · February 3, 2026</p>
+        <h3>Haldi Ceremony 🫴⭐🕶️</h3>
+        <p class="time">11:00 AM – 12:30 PM</p>
+        <p>
+          For guests staying with us at <strong>Vista Palm</strong>, lunch awaits.
+          <br><br>
+          Let’s all mud him up in <strong>Yellow 😜</strong>
+        </p>
+        <p class="dress">Dress Code: <span>Yellow</span></p>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section id="venue" class="section">
+      <h1 class="section-title">Venue</h1>
+      <div class="info-box">
+        <h3>Commute</h3>
+        <p>
+          Please refer the venue image on the left.
+          We recommend personal conveyance or private taxi services.
+        </p>
+        <p><strong>Engagement Venue:</strong> Kibana</p>
+        <p><strong>Wedding Venue:</strong> Fort, at Majestic Resorts</p>
+        <p><a href="https://www.uber.com" target="_blank">www.uber.com</a></p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
