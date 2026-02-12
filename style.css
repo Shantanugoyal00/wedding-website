@@ -421,35 +421,35 @@ body {
 
 /* VENUE CARD STYLING */
 .venue-card {
-  margin-top: 35px;
-  padding: 25px 30px;
+  margin-top: 50px;
+  padding: 40px 50px;
   background: #FCFDF6;
   border: 1px solid #e8e6dc;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
   width: 100%;
-  max-width: 420px;
+  max-width: 560px;
 }
 
 .venue-card h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 30px;
+  margin-bottom: 12px;
   letter-spacing: 1px;
 }
 
 .venue-name {
-  font-size: 20px;
-  margin-bottom: 18px;
+  font-size: 24px;
+  margin-bottom: 28px;
   color: #a87c3a;
 }
 
 /* MAP BUTTON */
 .map-btn {
   display: inline-block;
-  padding: 10px 22px;
+  padding: 14px 32px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 17px;
   border: 1px solid #a87c3a;
   color: #a87c3a;
   transition: all 0.3s ease;
@@ -527,7 +527,8 @@ body {
 }
 
 .venue-card {
-  padding: 20px;
+  padding: 28px 24px;
+  max-width: 100%;
 }
 
 .venue-card h3 {
