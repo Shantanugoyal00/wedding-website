@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+
+  <g fill="none" stroke="#b58b3b" stroke-width="3" stroke-linecap="round">
+
+    <!-- Center Flower -->
+    <circle cx="400" cy="400" r="40"/>
+
+    <!-- Petals -->
+    <ellipse cx="400" cy="320" rx="25" ry="60"/>
+    <ellipse cx="400" cy="480" rx="25" ry="60"/>
+    <ellipse cx="320" cy="400" rx="60" ry="25"/>
+    <ellipse cx="480" cy="400" rx="60" ry="25"/>
+
+    <!-- Diagonal Petals -->
+    <ellipse cx="340" cy="340" rx="20" ry="50" transform="rotate(-45 340 340)"/>
+    <ellipse cx="460" cy="340" rx="20" ry="50" transform="rotate(45 460 340)"/>
+    <ellipse cx="340" cy="460" rx="20" ry="50" transform="rotate(45 340 460)"/>
+    <ellipse cx="460" cy="460" rx="20" ry="50" transform="rotate(-45 460 460)"/>
+
+    <!-- Decorative Leaves -->
+    <path d="M400 260 C380 230, 420 230, 400 200" />
+    <path d="M400 540 C380 570, 420 570, 400 600" />
+
+    <!-- Side Flourishes -->
+    <path d="M260 400 C230 380, 230 420, 200 400" />
+    <path d="M540 400 C570 380, 570 420, 600 400" />
+
+  </g>
+
+</svg>

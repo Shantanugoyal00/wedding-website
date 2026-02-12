@@ -1,4 +1,6 @@
-/* SIDE NAV */
+/* ===============================
+   SIDE NAV
+================================ */
 const menuBtn = document.getElementById("menu-btn");
 const sideNav = document.getElementById("side-nav");
 const closeNav = document.getElementById("close-nav");
@@ -17,73 +19,85 @@ function closeMenu() {
 closeNav.onclick = closeMenu;
 navOverlay.onclick = closeMenu;
 
-/* CLOSE MENU ON LINK CLICK */
 document.querySelectorAll("#side-nav a").forEach(link => {
   link.addEventListener("click", closeMenu);
 });
 
-/* SLIDESHOW */
+
+/* ===============================
+   SLIDESHOW (5 IMAGES)
+================================ */
 const slides = document.querySelectorAll(".slide");
-const slideshow = document.getElementById("slideshow");
-const venueImage = document.getElementById("venue-image");
-
 let slideIndex = 0;
-let slideshowRunning = true;
-let timerId;
-
-function startSlideshow() {
-  venueImage.style.display = "none";
-  slideshow.style.display = "flex";
-
-  slides.forEach(s => s.classList.remove("active"));
-  slideIndex = 0;
-  slides[0].classList.add("active");
-
-  timerId = setInterval(() => {
-    slides[slideIndex].classList.remove("active");
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].classList.add("active");
-  }, 3500);
-
-  slideshowRunning = true;
-}
-
-function showVenueImage() {
-  clearInterval(timerId);
-  slideshow.style.display = "none";
-  venueImage.style.display = "block";
-  slideshowRunning = false;
-}
-
-startSlideshow();
-
-/* SCROLL SWITCH */
-const venueSection = document.getElementById("venue");
-
-window.addEventListener("scroll", () => {
-  const rect = venueSection.getBoundingClientRect();
-  const inVenue = rect.top < innerHeight / 2 && rect.bottom > innerHeight / 2;
-
-  if (inVenue && slideshowRunning) showVenueImage();
-  if (!inVenue && !slideshowRunning) startSlideshow();
-});
-
-/* COUNTDOWN */
-const targetDate = new Date("March 8, 2026").getTime();
-const timer = document.getElementById("timer");
 
 setInterval(() => {
-  const days = Math.floor((targetDate - Date.now()) / (1000 * 60 * 60 * 24));
-  timer.textContent = `${days} Days to Go`;
-}, 1000);
+  slides[slideIndex].classList.remove("active");
+  slideIndex = (slideIndex + 1) % slides.length;
+  slides[slideIndex].classList.add("active");
+}, 3500);
 
-/* AUDIO */
+
+/* ===============================
+   COUNTDOWN
+================================ */
+/* ===============================
+   ROYAL COUNTDOWN (D:H:M:S)
+================================ */
+const targetDate = new Date("March 10, 2026 00:00:00").getTime();
+const timer = document.getElementById("timer");
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+    timer.textContent = "The Wedding Day Is Here 👑";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  timer.textContent =
+    `${days} Days : ${hours} Hrs : ${minutes} Min : ${seconds} Sec Left`;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+
+/* ===============================
+   CINEMATIC WELCOME OVERLAY
+================================ */
 const overlay = document.getElementById("welcome-overlay");
+const enterBtn = document.getElementById("enter-btn");
 const music = document.getElementById("bg-music");
 
-overlay.onclick = () => {
-  music.volume = 0.4;
-  music.play();
-  overlay.style.display = "none";
+// Safety: disable menu until user enters
+menuBtn.disabled = true;
+
+enterBtn.addEventListener("click", () => {
+
+  music.volume = 0;
+  music.play().catch(() => {});
+
+  // 🎻 Soft fade-in
+  let fadeInterval = setInterval(() => {
+    if (music.volume < 0.4) {
+      music.volume = Math.min(music.volume + 0.02, 0.4);
+    } else {
+      clearInterval(fadeInterval);
+    }
+  }, 100);
+  // Fade out overlay smoothly
+  overlay.classList.add("fade-out");
+
+  setTimeout(() => {
+    overlay.style.display = "none";
+  }, 900);
+
+  // Enable menu after entry
   menuBtn.disabled = false;
-};
+});
