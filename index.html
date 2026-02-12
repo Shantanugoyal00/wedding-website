@@ -9,14 +9,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<!-- FIXED LOGO -->
+<img src="images/logo.jpg" id="site-logo" alt="Logo">
 
 <!-- WELCOME OVERLAY -->
+<!-- WELCOME OVERLAY -->
 <div id="welcome-overlay">
-  <div class="welcome-box">
-    <h1>Welcome</h1>
-    <p>Tap to enter</p>
+  <div class="floral-bg"></div>
+  <div class="overlay-card">
+
+    <p class="overlay-intro">A Celebration of Love</p>
+
+    <h1 class="overlay-names">
+      Deepali <span>&</span> Mridul
+    </h1>
+
+    <div class="overlay-divider"></div>
+
+    <p class="overlay-date">March 10, 2026</p>
+
+    <button id="enter-btn">Enter</button>
+
   </div>
 </div>
+
 
 <!-- MUSIC -->
 <audio id="bg-music" loop>
@@ -32,7 +48,7 @@
 <!-- SIDE NAV -->
 <nav id="side-nav">
   <button id="close-nav">✕</button>
-  <h2 class="nav-title">Deepali & Mriul</h2>
+  <h2 class="nav-title">Deeapli & Mridul</h2>
   <a href="#welcome">Home</a>
   <a href="#schedule">Schedule</a>
   <a href="#venue">Venue</a>
@@ -40,60 +56,73 @@
 
 <div class="container">
 
-  <!-- LEFT PANEL -->
+  <!-- LEFT PANEL SLIDESHOW -->
   <div class="left-panel">
     <div class="slideshow" id="slideshow">
-      <img src="images/slide1.jpg" class="slide active">
-      <img src="images/slide2.jpg" class="slide">
-      <img src="images/slide3.jpg" class="slide">
+      <img src="images/slide1.jpeg" class="slide active">
+      <img src="images/slide2.jpeg" class="slide">
+      <img src="images/slide3.jpeg" class="slide">
+      <img src="images/slide4.jpeg" class="slide">
+      <img src="images/slide5.jpeg" class="slide">
     </div>
-    <img src="images/venue.jpg" id="venue-image" />
   </div>
 
   <!-- RIGHT CONTENT -->
   <div class="content">
 
-    <!-- WELCOME -->
-    <section id="welcome" class="section">
-      <div class="info-box">
-        <h1 class="names">Deepali<br>&<br>Mridul</h1>
-        <p class="day">Sunday</p>
-        <p class="date-big">March 8, 2026</p>
-        <p class="save">Save the Date</p>
-        <p id="timer" class="countdown-text"></p>
-      </div>
-    </section>
+    <section id="welcome" class="section welcome-section">
+  <div class="info-box welcome-box-enhanced">
 
-    <!-- SCHEDULE -->
+    <h4 class="intro-text">Together With Their Families</h4><br>
+
+    <h1 class="names">Deepali<br><span class="amp">&</span><br>Mridul</h1>
+
+    <div class="divider"></div>
+
+    <h3 class="day">Tuesday</h3>
+        <h3 class="date-big">March 10, 2026</h3>
+        <h3 class="save">Save the Date</h3>
+        <h3 id="timer" class="countdown-text"></h3>
+
+  </div>
+</section>
+
     <section id="schedule" class="section">
       <h1 class="section-title">Schedule</h1>
       <div class="info-box">
         <h2>Let’s Plan Your Day 📃</h2>
-        <p class="date">Tuesday · February 3, 2026</p>
-        <h3>Haldi Ceremony 🫴⭐🕶️</h3>
-        <p class="time">11:00 AM – 12:30 PM</p>
-        <p>
-          For guests staying with us at <strong>Vista Palm</strong>, lunch awaits.
-          <br><br>
-          Let’s all mud him up in <strong>Yellow 😜</strong>
-        </p>
-        <p class="dress">Dress Code: <span>Yellow</span></p>
-      </div>
+        <br>
+        <h4 class="date">Sunday · March 8, 2026</h4>
+        <h3>Lagan Ceremony</h3>
+        <h4 class="time">11:00 AM</h4>
+        <br><br>
+        <h4 class="date">Tuesday · March 10, 2026</h4>
+        <h3>Wedding Ceremony </h3>
+        <h4 class="time">7:00 PM</h4>
+        </div>
     </section>
 
-    <!-- VENUE -->
     <section id="venue" class="section">
       <h1 class="section-title">Venue</h1>
       <div class="info-box">
-        <h3>Commute</h3>
-        <p>
-          Please refer the venue image on the left.
-          We recommend personal conveyance or private taxi services.
-        </p>
-        <p><strong>Engagement Venue:</strong> Kibana</p>
-        <p><strong>Wedding Venue:</strong> Fort, at Majestic Resorts</p>
-        <p><a href="https://www.uber.com" target="_blank">www.uber.com</a></p>
-      </div>
+        <div class="venue-card">
+  <h3>Lagan Venue</h3>
+  <p class="venue-name">Girdhar Garden</p>
+  <a class="map-btn" href="https://maps.app.goo.gl/guPcNHG52eTejk9K9" target="_blank">
+    View Location
+  </a>
+</div>
+
+<div class="venue-card">
+  <h3>Wedding Venue</h3>
+  <p class="venue-name">The Wedding Dot</p>
+  <a class="map-btn" href="https://maps.app.goo.gl/5cvr1fV84fRhuUFG7" target="_blank">
+    View Location
+  </a>
+</div>
+
+        
+       </div>
     </section>
 
   </div>
